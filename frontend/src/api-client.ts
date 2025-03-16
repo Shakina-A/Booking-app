@@ -65,8 +65,8 @@ export const addMyHotel = async (hotelFormData: FormData) : Promise<void> => {
     });
   
     if (!response.ok) {
-        const errorResponse = await response.json();
-      throw new Error("Failed to add hotel");
+     const errorResponse = await response.json();
+     throw new Error(errorResponse.message || "Failed to add hotel");
     }
   
     return response.json();
